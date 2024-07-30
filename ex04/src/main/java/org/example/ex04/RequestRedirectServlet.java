@@ -11,9 +11,11 @@ import java.io.IOException;
 public class RequestRedirectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        해당 요청은 내부에서 쓰이지 않으므로 무의미하다.
         req.setAttribute("username","홍길동");
         req.setAttribute("useraddress","서울");
 
-        resp.sendRedirect("request_redirect");
+//        response_redirect URL로 리다이렉트시킨다.
+        resp.sendRedirect("response_redirect");
     }
 }

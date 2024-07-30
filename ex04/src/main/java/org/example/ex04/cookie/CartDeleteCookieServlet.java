@@ -18,9 +18,11 @@ public class CartDeleteCookieServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
 
+//        기존 쿠키 얻기
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie c : cookies) {
+//                쿠키의 유효기간을 1초로 설정해서 사라지게 만든다.
                 c.setMaxAge(1);
                 response.addCookie(c);
             }

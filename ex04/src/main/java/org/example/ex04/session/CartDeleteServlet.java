@@ -19,8 +19,10 @@ public class CartDeleteServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("장바구니 비웠음!!");
 
+//        세션객체 가져오기
         HttpSession session = req.getSession(false);
         if (session != null) {
+//            세션에 있는 모든 속성을 제거  (장바구니 예제여서 한거)
             session.invalidate();
         }else{
             out.print("세선 없음" + "<br>");

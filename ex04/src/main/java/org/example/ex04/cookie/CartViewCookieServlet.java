@@ -19,10 +19,12 @@ public class CartViewCookieServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("장바구니 리스트<br>");
 
+//기존 쿠키 가져오기
         Cookie[] cookies = request.getCookies();
 
         if (cookies != null) {
             for (Cookie c : cookies) {
+//                각 쿠키의 이름과 값을 출력
                 out.print(c.getName() + ":" + c.getValue() + "<br>");
             }
         }else{
